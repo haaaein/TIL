@@ -6,10 +6,16 @@ function getTime() {
     const minutes = data.getMintues();
     const hours = data.getHours();
     const seconds = data.getSeconds();
-    clockTitle.innerText = `${housrs}:${minutes}:${seconds}`;
+    clockTitle.innerText = `${
+        housrs < 10 ? `0${hours}` : hours}:${
+            minutes < 10 ? `0${minutes}` : minutes
+        }:${seconds < 10 ? `0${seconds}` : seconds
+    }`;
+
 }
 function init() {
     getTime();
+    setInterval(getTime, 1000);
 }
 
 init();
