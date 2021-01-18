@@ -45,3 +45,37 @@ const hearts = names.map(() => " 💖 ");
 //ex) 💖
 
 console.log(hearts);
+
+/**
+ * arrow function을 사용하면 안될 때!
+ * 이벤트 리스너를 붙이고 이벤트 리스너에 function이 있으면
+ * 자바스크립트는 그것을 this 키워드에 넣는다.
+ * this 관련된거랑 scope 관련된 거
+ */
+
+ const haein = {
+    name: "Haein",
+    age: 23,
+    addYear: () => {
+        this.age++;
+    }
+ };
+
+ console.log(haein);
+ haein.addYear;
+ haein.addYear;
+ console.log(haein);
+
+ /**
+  * this는 haein을 가리키기 때문에 
+  * arrow function을 사용하게 되면 나이가 증가하지 않는다.
+  **/
+
+ const haein = {
+    name: "Haein",
+    age: 23,
+    addYear() {
+        this.age++;
+    }
+ };
+
