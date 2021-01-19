@@ -79,3 +79,34 @@ console.log(hearts);
     }
  };
 
+const emails = [
+    "hi@naver.com",
+    "name@google.com",
+    "haein@gmail.com",
+    "yours@nomad.com"
+];
+
+const foundMail = emails.find(item => item.includes("@gmail.com"));
+//find는 true, false return
+
+console.log(foundMail);
+
+const noGmail = emails.filter(potato => !potato.includes("@gmail"));
+
+//map은 forEach지만 반환된 element들로 새로운 array를 만들어줘.
+console.log(noGmail);
+
+emails.forEach(email => {
+    console.log(email.split("@")[0]);
+})
+
+const cleaned = emails.map(email => email.split("@")[0]);
+
+//object return
+const cleaned = emails.map((email, index) => ({
+    username: email.split("@")[0],
+    index
+}));
+
+console.log(cleaned);
+console.table(cleaned);
