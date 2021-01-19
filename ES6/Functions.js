@@ -110,3 +110,15 @@ const cleaned = emails.map((email, index) => ({
 
 console.log(cleaned);
 console.table(cleaned);
+
+//default값 주는 것.
+function sayHi(aName = "anonymous") {
+    return "Hello" + aName;
+}
+
+console.log(sayHi());
+
+//arrow function
+const sayHi = (aName = "anon") => "hello" + aName;
+
+console.log(sayHi());
