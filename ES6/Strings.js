@@ -48,3 +48,28 @@ const list = `
 //array로 생성되기 때문에 ,가 붙는다. join " " 으로 합쳐주면 안붙음
 
 wrapper.innerHTML = list;
+
+//Cloning Styled Components
+const styled = aElement => {
+    const el = document.createElement(aElement);
+    return args => {
+        //args의 첫번째 element만 필요하기 때문에
+        const styles = args[0];
+        el.style = styles;
+        return el;
+    };
+};
+
+const title = styled("h1")`
+    border-radius: 10px;
+    color: blue;
+`;
+
+const subtitle = styled("span")`
+    color: green;
+`;
+
+title.innerText = "We just cloned";
+subtitle.innerText = "styled Components";
+
+document.body.append(title, subtitle);
