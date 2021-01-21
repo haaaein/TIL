@@ -73,3 +73,32 @@ title.innerText = "We just cloned";
 subtitle.innerText = "styled Components";
 
 document.body.append(title, subtitle);
+
+/**
+ * include 찾고 싶은 문자가 있는지 확인해준다.
+ */
+
+ const isEmail = email => email.include("@");
+
+ console.log(isEmail("haaaein@naver.com"));
+
+ /**
+  * string.repeat 원하는 어떤 글자든 반복할 수 있다.
+  */
+
+const CC_NUMBER = "6060";
+
+const displayName = `${"*".repeat(10)}${CC_NUMBER}`;
+
+console.log(displayName);
+
+/**
+ * string.startsWith, endsWith
+ * 유효성 검사할 때 사용 가능! 
+ */
+
+ const names = "Mr.Nicolas";
+
+ console.log(names.startsWith("Mr"));
+
+
