@@ -10,3 +10,49 @@ const buttons = document.getElementsByClassName("button");
 Array.from(buttons).forEach(button => {
     button.addEventListener("click", () => console.log("I ve been clicked"));
 });
+
+//Array.find
+const friedns = [
+    "haein@gmail.con",
+    "me@naver.com",
+    "dal@yahoo.com",
+    "mark@hotmail.com",
+    "spring@korea.com"
+];
+
+const target = friends.find(friend => friend.includes("@korea.com"));
+
+//Array.findIndex (return index)
+const check = () => friends.findIndex(friend => friend.includes("@korea.com"));
+
+let target = check();
+
+const username = friends[target].split("@")[0];
+
+const email = "korea.com";
+
+friends[target] = `${username}@{email}`;
+
+target = check();
+
+console.log(target);
+
+//Array.fill
+const friedns = [
+    "haein@gmail.con",
+    "me@naver.com",
+    "dal@yahoo.com",
+    "mark@hotmail.com",
+    "spring@korea.com"
+];
+
+friends.fill("*".repeat("5"));
+
+console.log(friends);
+
+//Array.include 
+//Array에서 어떤 걸 갖고 있는지 알고 싶을 때
+
+friends.includes("haein@gmail.com");
+//return true  or false
+
