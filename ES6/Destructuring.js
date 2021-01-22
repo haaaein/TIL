@@ -34,5 +34,29 @@ const [mon, tue, wed, thu = "Thu"] = days();
 
 console.log(mon, tue, wed);
 
+/**
+ * Renaming
+ */
+
+const settings = {
+    color: {
+        chosen_color: "dark"
+    }
+};
+
+const {
+    color: { chosen_color: chosenColor = "light "}
+} = settings;
+
+console.log(chosenColor);
+
+//or
+
+let chosenColor = "blue";
+
+({
+    color: { chosen_color: chosenColor = "light "}
+} = settings);
+
 
 
