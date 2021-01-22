@@ -22,3 +22,17 @@ const { color: {theme} } = settings;
 //color는 경로일 뿐이고 theme 값을 가져온다.
 
 console.log(notifications);
+
+/**
+ * Array Destructuring
+ * 가져온 정보를 조작 하지 않을 때 쓰기 좋다.
+ */
+
+const days = () => ["Mon", "Tue", "Wed"];
+
+const [mon, tue, wed, thu = "Thu"] = days();
+
+console.log(mon, tue, wed);
+
+
+
