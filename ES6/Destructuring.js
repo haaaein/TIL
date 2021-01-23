@@ -58,5 +58,22 @@ let chosenColor = "blue";
     color: { chosen_color: chosenColor = "light "}
 } = settings);
 
+/**
+ * Function Destructuring
+ */
 
+ function saveSettings({ notifications, clolor: { theme } }) {
+    console.log(color);
+ }
+
+ saveSettings({
+     notifications: {
+        follow: true,
+        alert: true,
+        mkt: true,
+     },
+     color: {
+         theme: "blue"
+     }
+ });
 
