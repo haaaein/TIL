@@ -77,6 +77,7 @@ let chosenColor = "blue";
      }
  });
 
+//Value Shorthands
 const follow = checkFollow();
 const alert = checkAlert();
 
@@ -87,4 +88,14 @@ const settings = {
     }
 };
 
+//Swapping and Skipping
+let mon = "Sat";
+let sat = "Mon";
 
+[sat, mon] = [mon, sat];
+
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+const [, , , thu, fri] = days;
+
+console.log(thu, fri);
