@@ -46,3 +46,26 @@ const user = {
 };
 
 console.log(user);
+
+/**
+ * rest는 모든 값을 하나의 변수로 축소시켜주는 것.
+ */
+const infiniteArgs = (...kimchi) => console.log(kimchi);
+
+infiniteArgs(
+    "1",
+    2,
+    true,
+    "lalala", 
+    ["1", 2, 3, 4]
+);
+
+const bestFriendMaker = (firstOne, ...rest) => {
+    console.log(`My best friend is ${firstOne}`);
+    console.log(rest);
+};
+    
+bestFriendMaker("han", "min", "dal");
+
+
+
