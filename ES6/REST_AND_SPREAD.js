@@ -67,5 +67,31 @@ const bestFriendMaker = (firstOne, ...rest) => {
     
 bestFriendMaker("han", "min", "dal");
 
+const uesr = {
+    name: "haein",
+    age: 23,
+    password: 1234
+};
 
+//cleaning objects
+const killPassword = ({password, ...rest}) => rest;
 
+const cleanUser = killPassword(user);
+
+console.log(cleanUser);
+
+const setCountry = ({country = "KR", ...rest}) => ({ country, ...rest });
+//country default값 설정하기
+
+console.log(setCountry(user));
+
+//변수 값의 이름을 바꿔주는 함수 만들기
+const user = {
+    NAME: "haeinn",
+    age: 23,
+    password: 1234
+};
+
+const rename = ({NAME:name, ...rest }) => ({ name, ...rest });
+
+console.log(rename(user));
