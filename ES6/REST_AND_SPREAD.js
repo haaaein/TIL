@@ -18,3 +18,31 @@ const hello = {
 };
 
 console.log({...sexy, ...hello});
+
+//Spread Applications
+const friends = ["nico", "haein"];
+
+const newFriends = [...friends, "dal"];
+
+console.log(newFriends);
+
+const first = ["mon", "tue", "wed"];
+
+const weekend = ["sat", "sun"];
+
+const fullweek = [...first, "thu", "fri", ...weekend];
+
+console.log(fullweek);
+
+//conditional object
+const lastName = prompt("Last name");
+
+const user = {
+    username: "nico",
+    age: 24,
+    //lastName: lastName !== "" ? lastName :  undefined
+    //lastname이 빈 문자열이 아닐때만 lastName 넣어주고 빈 문자열이면 undefined 
+    ...(lastName !== "" && { lastName })
+};
+
+console.log(user);
