@@ -29,4 +29,34 @@ const amISexy = new Promise((resolve, reject) => {
     .catch(error => console.log(error));
 
 
+/**
+ * Chaining Promises
+ */
 
+ const amISexy = new Promise((resolve, reject) => {
+     resolve(2);
+ });
+
+ amISexy
+    .then(number => {
+        console.log(number * 2);
+        return number * 2;
+        //return 값을 줘야한다.
+    })
+    .then(otherNumber => {
+        console.log(otherNumber * 2);
+    });
+
+const timesTwo = number => number * 2;
+
+amISexy
+    .then(timesTwo)
+    .then(timesTwo)
+    .then(timesTwo)
+    .then(timesTwo)
+    .then(timesTwo)
+    .then(() => {
+        throw Error("Something is wrong");
+    })
+    .then(lastNumber => console.log(lastNumber))
+    .catch(error => console.log(error));
