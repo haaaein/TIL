@@ -102,3 +102,17 @@ const p1 = new Promise(resolve, reject => {
     .catch(e => console.log(`${e} ❌`))
     .finally(() => console.log("I'm done"));
 
+/**
+ * Real World Promises
+ * fetch가 하는 일은 뭔가를 가지고 오는 것.
+ */
+
+fetch("https://google.com")
+    .then(response => {
+        console.log(response);
+        return response.json();
+    })
+    .then(json => console.log(json))
+    .catch(e => console.log(`❌ ${e}`));
+
+
