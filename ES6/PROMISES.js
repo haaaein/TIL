@@ -91,3 +91,14 @@ Promise.race([p1, p2, p3])
     .then(values => console.log(values))
     .catch(err => console.log(err));
 
+/**
+ * Finally
+ */
+
+const p1 = new Promise(resolve, reject => {
+    setTimeout(reject, 5000, "First");
+})
+    .then(value => console.log(value))
+    .catch(e => console.log(`${e} ❌`))
+    .finally(() => console.log("I'm done"));
+
