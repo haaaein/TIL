@@ -39,3 +39,29 @@ const getMoviesAsync = async() => {
 };
 
 getMoviesAsync();
+
+/**
+ * Parallel Async Await
+ * 최상위에서 await가 동작해야 한다. 항상 async 함수를 만들어야 한단 뜻!
+ */
+
+const getMoviesAsync = async() => {
+    try {
+        const [moviesResponse, suggestionsResponse] = await Promise.all([
+            fetch("https://yts.am/api/v2/list_movies.json"),
+            fetch("https://yts.am/api/v2/movie_suggestions.json?movie_id=100")
+        ]);
+        const [movies, suggestions] = await Promise.all([
+            moviesResponse.json(), 
+            suggestionsResponse.json
+        ]);
+
+        console.log(movies, suggestions);
+    } catch (e) {
+        console.log(`❌ ${e}`);
+    } finally {
+        console.log("We are done!");
+    }
+};
+
+getMoviesAsync();
